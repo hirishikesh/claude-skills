@@ -1,24 +1,49 @@
 # Exhaustive Learning Map Extractor — Claude Skill
 
-Upload this folder or ZIP as a Claude Skill.
+A Claude Skill for converting transcripts, lectures, notes, research dumps, meeting transcripts, and other long unstructured text into **exhaustive, zero-detail-loss learning maps**.
 
-## What it does
+This skill is designed for users who do not want a normal summary. Instead, it restructures source material into a detailed, navigable learning map while preserving definitions, examples, caveats, numbers, relationships, contradictions, edge cases, and source anchors.
 
-This skill turns pasted transcripts, lectures, research dumps, notes, and long unstructured text into exhaustive learning maps.
+---
 
-It is designed to avoid the usual LLM failure mode of summarizing too aggressively. It instructs Claude to preserve details, definitions, numbers, caveats, relationships, examples, contradictions, and source anchors.
+## What This Skill Does
+
+The **Exhaustive Learning Map Extractor** helps Claude transform messy or lengthy material into structured learning assets such as:
+
+- Markdown learning maps
+- JSON ontologies
+- Mermaid mindmaps
+- Knowledge graph-style edge lists
+- Structured study outlines
+
+Its core purpose is **faithful transformation, not compression**.
+
+A summary asks:
+
+> What matters most?
+
+This skill asks:
+
+> What is present in the source, and how does it all connect?
+
+---
+
+## Key Features
+
+- Preserves major topics, subtopics, definitions, named entities, dates, numbers, examples, caveats, warnings, limitations, and edge cases.
+- Tracks relationships such as cause and effect, prerequisites, dependencies, contrasts, contradictions, workflows, and hierarchies.
+- Avoids adding outside knowledge unless explicitly requested.
+- Supports multiple output formats including Markdown, JSON, Mermaid, and knowledge graph tables.
+- Handles long inputs by processing material section by section instead of pretending the extraction is complete.
+- Includes verification checks for omitted numbers, examples, caveats, definitions, and relationships.
+
+---
 
 ## Files
 
-- `SKILL.md` — the actual Claude Skill file.
-- `references/RESEARCH_NOTES.md` — your original research foundation, kept for future improvement.
-
-## Suggested invocation
-
-After uploading, ask Claude:
-
-> Use the exhaustive-learning-map-extractor skill. Turn this transcript into a zero-detail-loss learning map. Give me Markdown first, then a Mermaid overview.
-
-## Best use
-
-Paste one transcript or section at a time for maximum coverage. For very long material, ask Claude to process it section-by-section and continue from the previous map.
+```text
+exhaustive-learning-map-extractor/
+├── SKILL.md
+├── README.md
+└── references/
+    └── RESEARCH_NOTES.md
